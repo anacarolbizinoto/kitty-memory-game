@@ -10,15 +10,25 @@ const imagens = [
     '7.png'
 ];
 
-let cardHTML = '';
+let cartaHTML = '';
 
 imagens.forEach(img => {
-    cardHTML += `
-        <div class="cartao-memoria">
-            <img class="cartao-frente" src="img/${img}">
-            <img class="cartao-costas" src="img/card.png">
+    cartaHTML += `
+        <div class="carta-memoria">
+            <img class="carta-frente" src="img/${img}">
+            <img class="carta-costas" src="img/carta.png">
         </div>
     `
 })
 
-tabuleiro.innerHTML = cardHTML + cardHTML;
+tabuleiro.innerHTML = cartaHTML + cartaHTML;
+
+
+function flipCarta () {
+    this.classList.add('flip');
+} 
+
+const cartas = document.querySelectorAll('.carta-memoria'); 
+cartas.forEach(carta => carta.addEventListener("click", flipCarta));
+
+

@@ -15,24 +15,40 @@ body {
     width: 640px;
     height: 640px;
     margin: auto; /* centralizar */
-    display: flex; /* cartao ficar um embaixo do outro com a versao virada */
+    display: flex; /* carta ficar um embaixo do outro com a versao virada */
     flex-wrap: wrap; /* fazer com que nao fiquem todas na mesma linha, faz a quebra p ficar dentro do tabuleiro */
 }
 
-.cartao-memoria {
+.carta-memoria {
     width: calc(25% - 10px); /* o card vai ocupar 25% do tabuleiro e antes da quebra saltar 10px na margem*/
     height: 22%;
     margin: 5px; /* afastar as cartas entre as outras */
+    transform-style: preserve-3d;
     position: relative;
-
 }
 
-.cartao-frente, 
-.cartao-costas {
+.carta-memoria:active {
+    transform: scale(0.95);
+}
+/* active é ao clique. vai sofrer uma transformaçao de escala ao clique*/
+
+
+.carta-memoria.flip {
+    transform: rotateY(180deg);
+}
+/* girar 180 graus qnd clicado */
+
+
+.carta-frente, 
+.carta-costas {
     width: 100%;
     height: 100%;
     padding: 15px; /* bordinha preta nos cards*/
     background: black;
     position: absolute; 
 
+}
+
+.carta-frente{
+    transform: rotateY(180deg);
 }
