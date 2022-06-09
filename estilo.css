@@ -7,24 +7,32 @@
 body {
     height: 100vh;
     display: flex;
+    background: rgb(233, 233, 246);
 
 }
 
 #tabuleiro {
-    width: 1200px;
-    height: 1200px;
+    width: 640px;
+    height: 640px;
     margin: auto; /* centralizar */
     display: flex; /* cartao ficar um embaixo do outro com a versao virada */
+    flex-wrap: wrap; /* fazer com que nao fiquem todas na mesma linha, faz a quebra p ficar dentro do tabuleiro */
 }
 
 .cartao-memoria {
-    width: 25%;
-    height: 7%;
+    width: calc(25% - 10px); /* o card vai ocupar 25% do tabuleiro e antes da quebra saltar 10px na margem*/
+    height: 22%;
+    margin: 5px; /* afastar as cartas entre as outras */
+    position: relative;
 
 }
 
-.cartao-frente, .cartao-costas {
+.cartao-frente, 
+.cartao-costas {
     width: 100%;
     height: 100%;
+    padding: 15px; /* bordinha preta nos cards*/
     background: black;
+    position: absolute; 
+
 }

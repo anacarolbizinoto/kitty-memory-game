@@ -7,6 +7,7 @@ const imagens = [
     '4.png',
     '5.png',
     '6.png',
+    '7.png'
 ];
 
 let cardHTML = '';
