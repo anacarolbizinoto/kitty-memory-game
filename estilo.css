@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+
+}
+
+#tabuleiro {
+    width: 1200px;
+    height: 1200px;
+    margin: auto; /* centralizar */
+    display: flex; /* cartao ficar um embaixo do outro com a versao virada */
+}
+
+.cartao-memoria {
+    width: 25%;
+    height: 7%;
+
+}
+
+.cartao-frente, .cartao-costas {
+    width: 100%;
+    height: 100%;
+    background: black;
+}
