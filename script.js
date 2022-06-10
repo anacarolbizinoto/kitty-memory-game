@@ -45,21 +45,28 @@ function flipCarta() {
 function checandoIgualdade () {
     let compativel = primeiraCarta.dataset.carta === segundaCarta.dataset.carta;
 
-    !compativel ? desativarCartas(): true;
+    !compativel ? desativarCartas() : resetarCartas(compativel);
 } 
 
 function desativarCartas () {
     trancarCarta = true;
+
     setTimeout(() => {
         primeiraCarta.classList.remove('flip');
-        segundaCarta.classList.remove('flip')}, 
-
-        [primeiraCarta, segundaCarta, trancarCarta] = [null, null, false]
-        1000)
+        segundaCarta.classList.remove('flip'), 
+    
+        resetarCartas();
+    },1000)
     
 }
 
-
+function resetarCartas (compativel = false) {
+    if (compativel) {
+        primeiraCarta.removeEventListener("click", flipCarta);
+        segundaCarta.removeEventListener("click", flipCarta);
+    }
+    [primeiraCarta, segundaCarta, trancarCarta] = [null, null, false]
+}
 
 
 
