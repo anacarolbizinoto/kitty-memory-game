@@ -60,6 +60,13 @@ function desativarCartas () {
     
 }
 
+(function aleatorio(){
+    cartas.forEach (carta => {
+        let numAlet = Math.floor(Math.random() * 16);
+        carta.style.order = numAlet;
+    })
+})()
+
 function resetarCartas (compativel = false) {
     if (compativel) {
         primeiraCarta.removeEventListener("click", flipCarta);
