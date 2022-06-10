@@ -8,7 +8,6 @@ body {
     height: 100vh;
     display: flex;
     background: rgb(233, 233, 246);
-
 }
 
 #tabuleiro {
@@ -38,17 +37,19 @@ body {
 }
 /* girar 180 graus qnd clicado */
 
-
-.carta-frente, 
-.carta-costas {
+.carta-costas,
+.carta-frente {
     width: 100%;
     height: 100%;
     padding: 15px; /* bordinha preta nos cards*/
     background: black;
     position: absolute; 
-
 }
 
-.carta-frente{
+.carta-frente {
     transform: rotateY(180deg);
+}
+
+.carta-costas {
+    backface-visibility: hidden;
 }

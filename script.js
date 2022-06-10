@@ -1,5 +1,5 @@
-const tabuleiro = document.getElementById('tabuleiro')
-const imagens = [
+const tabuleiro = document.querySelector("#tabuleiro");
+const img = [
     '0.png',
     '1.png',
     '2.png',
@@ -12,23 +12,24 @@ const imagens = [
 
 let cartaHTML = '';
 
-imagens.forEach(img => {
+img.forEach(img => {
     cartaHTML += `
         <div class="carta-memoria">
             <img class="carta-frente" src="img/${img}">
             <img class="carta-costas" src="img/carta.png">
         </div>
     `
-})
+});
 
 tabuleiro.innerHTML = cartaHTML + cartaHTML;
 
+const cartas = document.querySelectorAll(".carta-memoria"); 
 
-function flipCarta () {
+function flipCarta() {
     this.classList.add('flip');
 } 
 
-const cartas = document.querySelectorAll('.carta-memoria'); 
-cartas.forEach(carta => carta.addEventListener("click", flipCarta));
+cartas.forEach(carta => carta.addEventListener('click', flipCarta))
+
 
 
